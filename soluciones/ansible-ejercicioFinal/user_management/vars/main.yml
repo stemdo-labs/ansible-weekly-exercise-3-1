@@ -18,5 +18,41 @@
       "groups": ["grupo1", "grupo2"]
     }
   ]
+
+#   # different users for each node
+#   "users_servidor_web1": [
+#     {
+#       "username": "web_1_user-1",
+#       "password": "contraseña1",
+#       "groups": ["grupo_web_1-1"]
+#     },
+#     {
+#       "username": "web_1_user-1",
+#       "password": "contraseña2",
+#       "groups": ["grupo_web_1-2"]
+#     },
+#     {
+#       "username": "web_1_user-1",
+#       "password": "contraseña3",
+#       "groups": ["grupo_web_1-1", "grupo_web_1-2"]
+#     }
+#   ],
+#   "users_servidor_web2": [
+#     {
+#       "username": "web_2_user-1",
+#       "password": "contraseña1",
+#       "groups": ["grupo_web_2-1"]
+#     },
+#     {
+#       "username": "web_2_user-2",
+#       "password": "contraseña2",
+#       "groups": ["grupo_web_2-2"]
+#     },
+#     {
+#       "username": "web_2_user-3",
+#       "password": "contraseña3",
+#       "groups": ["grupo_web_2-1", "grupo_web_2-2"]
+#     }
+#   ]
 }
 
