@@ -1,0 +1,15 @@
+---
+# vars file for user_management
+
+user_accounts:
+  - username: "alfredo"
+    password: "{{ alfredo_password | password_hash('sha512') }}"
+    groups: ["grupo1"]
+  - username: "nico"
+    password: "{{ nico_password | password_hash('sha512') }}"
+    groups: ["grupo2"]
+  - username: "seddik"
+    password: "{{ seddik_password | password_hash('sha512') }}"
+    groups: ["grupo1", "grupo2"]
+
+

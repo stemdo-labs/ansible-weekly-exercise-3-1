@@ -1,0 +1,7 @@
+# playbook.yml
+---
+- name: Configurar cuentas de usuario en todos los servidores
+  hosts: all
+  become: true
+  roles:
+    - user_management

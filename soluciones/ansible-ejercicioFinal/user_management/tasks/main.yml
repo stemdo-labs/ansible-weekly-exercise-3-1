@@ -1,0 +1,22 @@
+---
+# tasks file for user_management
+- name: Cargar lista de grupos
+  include_vars:
+    file: user_passwords.yml
+
+- name: Crear grupos
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ user_accounts | map(attribute='groups') | flatten | unique }}"
+  become: true
+
+- name: Crear usuarios
+  user:
+    name: "{{ item.username }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    groups: "{{ item.groups }}"
+    state: present
+  loop: "{{ user_accounts }}"
+...
+
