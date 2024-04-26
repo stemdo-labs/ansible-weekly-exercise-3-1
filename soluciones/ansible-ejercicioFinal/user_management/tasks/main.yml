@@ -1,14 +1,19 @@
 ---
 # tasks file for user_management
----
+- name: Crear grupos
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ user_accounts | map(attribute='groups') | flatten | unique }}"
+  become: true
+
 - name: Crear usuarios
   user:
-    name: "{{ item.name }}"
+    name: "{{ item.username }}"
     password: "{{ item.password | password_hash('sha512') }}"
     groups: "{{ item.groups }}"
     state: present
   loop: "{{ user_accounts }}"
-  when: item.state == 'present'
 
 # - name: Eliminar usuarios
 #   user:
