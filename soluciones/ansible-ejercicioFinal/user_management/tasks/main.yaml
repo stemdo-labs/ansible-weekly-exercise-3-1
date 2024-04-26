@@ -1,0 +1,17 @@
+---
+- name: Crear usuarios
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    groups: "{{ item.groups }}"
+    state: "{{ item.state }}"
+  loop: "{{ user_accounts }}"
+  when: item.state == 'present'
+
+- name: Eliminar usuarios
+  user:
+    name: "{{ item.name }}"
+    state: absent
+  loop: "{{ user_accounts }}"
+  when: item.state == 'absent'
+...

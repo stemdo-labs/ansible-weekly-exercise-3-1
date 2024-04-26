@@ -1,0 +1,22 @@
+---
+# vars file for user_management
+{
+  "users": [
+    {
+      "username": "usuario1",
+      "password": "contraseña1",
+      "groups": ["grupo1"]
+    },
+    {
+      "username": "usuario2",
+      "password": "contraseña2",
+      "groups": ["grupo2"]
+    },
+    {
+      "username": "usuario3",
+      "password": "contraseña3",
+      "groups": ["grupo1", "grupo2"]
+    }
+  ]
+}
+
